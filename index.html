@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Parallax</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700;800&family=Marcellus&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Marcellus', serif;
+      background: white;
+      color: black;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .headline {
+      font-family: 'Avenir Next', sans-serif;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 0.95;
+    }
+
+    .kicker {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #F74F20;
+    }
+
+    .section {
+      border-top: 1px solid rgba(0,0,0,0.1);
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      padding: 80px 0;
+    }
+
+    .divider {
+      height: 1px;
+      background: rgba(0,0,0,0.1);
+      margin: 40px 0;
+    }
+
+    .lead {
+      font-size: 22px;
+      color: rgba(0,0,0,0.8);
+    }
+
+    .body {
+      font-size: 18px;
+      color: rgba(0,0,0,0.75);
+    }
+
+    .small {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.4);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: black;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      font-family: 'Urbanist', sans-serif;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #F74F20;
+    }
+
+    strong {
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+  <main class="container">
+
+    <section class="section">
+      <p class="kicker">UK-based independent research agency</p>
+
+      <img src="Black.png" style="height:60px;margin:20px 0;" />
+
+      <h1 class="headline">We investigate state and corporate violence.</h1>
+
+      <p class="lead">
+        Parallax uses interdisciplinary techniques to investigate violence against marginalised communities. We connect grassroots organisations, legal experts, academics, open-source investigators, architects, artists, and non-profit partners to transform complex investigations into strategic tools for justice.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="kicker" style="color:rgba(0,0,0,0.4)">Pilot project</p>
+
+      <p class="lead">
+        As an organisation based in the UK, our work begins here. Our pilot project is investigating violence against refugees and people seeking asylum attempting to seek safe haven in the UK via the <strong>Channel</strong>. Physical violence is enacted by law enforcement, including beatings, rubber bullets and evictions but stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a ‘threat’.
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="body">
+        Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.
+      </p>
+
+      <p class="body">
+        International law frameworks have, since their inception, upheld neo-colonial power structures that allow Global North states like the UK to evade accountability and continue to perpetuate colonial inequities. As of December 2025, only actors from the Global South have ever been prosecuted by any international tribunals, including through the <strong>International Criminal Court (ICC)</strong>.
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="body">
+        Our methodology builds upon existing knowledge bases, working with human rights organisations, grassroots groups and academics in France and the UK. We collate and analyse partner data alongside our own research to identify patterns of violence and avoid duplicating harmful fieldwork.
+      </p>
+
+      <div class="divider"></div>
+
+      <p class="body">
+        Our objectives are threefold: to develop evidence for legal proceedings, to pursue accountability through the <strong>International Criminal Court (ICC)</strong>, and to raise awareness amongst the public.
+      </p>
+    </section>
+
+    <section class="section">
+      <p class="body">For collaborations, casework, or research partnerships:</p>
+
+      <a href="mailto:hello@parallax.org" class="button">hello@parallax.org →</a>
+    </section>
+
+    <footer style="margin-top:40px">
+      <p class="small">Parallax · Independent Research Agency</p>
+      <p class="small">UK · International · Human Rights</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

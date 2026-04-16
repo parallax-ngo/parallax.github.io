@@ -277,37 +277,6 @@ nav {
   color: var(--mid);
 }
 
-/* ---- CONTACT SECTION ---- */
-.contact-section {
-  border-top: 1px solid var(--rule);
-  padding: 5rem 3rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: end;
-}
-
-.contact-left h2 {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1.1;
-  color: var(--black);
-  margin-bottom: 1rem;
-}
-
-.contact-left p {
-  font-size: 1rem;
-  color: var(--mid);
-  line-height: 1.7;
-}
-
-.contact-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
 
 .btn {
   display: flex;
@@ -356,15 +325,13 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 2rem;
 }
 
-.footer-wordmark {
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(0,0,0,0.25);
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
 }
 
 .footer-meta {
@@ -376,6 +343,16 @@ footer {
   color: rgba(0,0,0,0.25);
   text-align: right;
   line-height: 2;
+}
+
+.icon-btn {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 /* ---- REVEAL ANIMATIONS ---- */
@@ -400,15 +377,17 @@ footer {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 800px) {
-  nav, .hero, .page-section, .contact-section, footer {
+  nav, .hero, .page-section, footer {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .hero-rule-row, .section-header, .contact-section { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-rule-row, .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
   .objectives { grid-template-columns: 1fr; }
   .objective-item { border-right: none; border-bottom: 1px solid var(--rule); }
   .objective-item:last-child { border-bottom: none; }
   .nav-right { display: none; }
+  footer { flex-wrap: wrap; gap: 1.25rem; }
+  .footer-meta { text-align: left; }
 }
 </style>
 </head>
@@ -448,6 +427,8 @@ footer {
     </p>
   </div>
 
+  <div id="sea-strips" style="position:relative;height:380px;background:#07101c;margin:3rem -3rem;overflow:hidden;"></div>
+
   <p class="body-text reveal">
     Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.
   </p>
@@ -483,42 +464,163 @@ footer {
   </div>
 </div>
 
-<!-- CONTACT -->
-<div class="contact-section" id="contact">
-  <div class="contact-left reveal">
-    <h2>Get in touch.</h2>
-    <p>Reach us for research collaboration, partnership enquiries, or press.</p>
-  </div>
-  <div class="contact-buttons reveal reveal-d1">
+<!-- FOOTER / CONTACT -->
+<footer id="contact">
+  <img src="Black.png" alt="Parallax" style="height:30px; display:block; opacity:0.22;">
+  <div class="footer-contact">
     <a href="mailto:info@parallax.org" class="btn primary">
-      info@parallax.org
-      <span class="arrow">→</span>
+      info@parallax.org <span>→</span>
     </a>
-    <a href="https://www.instagram.com/parallax_ngo" target="_blank" class="btn">
-      Instagram
-      <span class="arrow">↗</span>
+    <a href="https://www.instagram.com/parallax_ngo" target="_blank" class="btn icon-btn" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="2" width="20" height="20" rx="5"/>
+        <circle cx="12" cy="12" r="4.5"/>
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+      </svg>
     </a>
-    <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" class="btn">
-      LinkedIn
-      <span class="arrow">↗</span>
+    <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" class="btn icon-btn" aria-label="LinkedIn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02 3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8.5h4.5V24H.25V8.5zM8.5 8.5h4.3v2.1h.06c.6-1.13 2.07-2.32 4.26-2.32 4.56 0 5.4 3 5.4 6.9V24h-4.5v-8c0-1.9-.03-4.36-2.66-4.36-2.66 0-3.07 2.08-3.07 4.22V24H8.5V8.5z"/>
+      </svg>
     </a>
   </div>
-</div>
-
-<footer>
-  <img src="Black.png" alt="Parallax" style="height:28px; display:block; opacity:0.25;">
   <div class="footer-meta">
-    Independent Research Agency<br>
     UK · International · Human Rights
   </div>
 </footer>
 
 <script>
+/* ---- Reveal observer ---- */
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
 }, { threshold: 0.1 });
 revealEls.forEach(el => io.observe(el));
+
+/* ---- Sea strip generator ---- */
+(function() {
+  const svgSea = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0a1018"/>
+      <stop offset="70%" stop-color="#162233"/>
+      <stop offset="100%" stop-color="#1e3348"/>
+    </linearGradient>
+    <linearGradient id="gSea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1a3350"/>
+      <stop offset="50%" stop-color="#0f2035"/>
+      <stop offset="100%" stop-color="#06101c"/>
+    </linearGradient>
+    <linearGradient id="gGlow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1e3348" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#2a4e70" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#2a4e70" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#1e3348" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1200" height="380" fill="url(#gSky)"/>
+
+  <!-- Cloud mass top left -->
+  <ellipse cx="160" cy="60" rx="200" ry="55" fill="#0d1928" opacity="0.7"/>
+  <ellipse cx="320" cy="40" rx="160" ry="40" fill="#0e1c2c" opacity="0.6"/>
+  <ellipse cx="80" cy="80" rx="140" ry="40" fill="#0c1622" opacity="0.5"/>
+
+  <!-- Cloud mass top right -->
+  <ellipse cx="980" cy="50" rx="220" ry="50" fill="#0d1928" opacity="0.65"/>
+  <ellipse cx="1100" cy="75" rx="160" ry="45" fill="#0e1c2c" opacity="0.55"/>
+  <ellipse cx="850" cy="65" rx="130" ry="35" fill="#0c1622" opacity="0.45"/>
+
+  <!-- Mid cloud wisps -->
+  <ellipse cx="500" cy="100" rx="180" ry="30" fill="#0f1e30" opacity="0.4"/>
+  <ellipse cx="720" cy="85" rx="200" ry="28" fill="#0f1e30" opacity="0.35"/>
+
+  <!-- Distant ship silhouette on horizon -->
+  <rect x="540" y="198" width="120" height="14" fill="#0b1928" opacity="0.85"/>
+  <rect x="570" y="185" width="12" height="14" fill="#0b1928" opacity="0.85"/>
+  <rect x="618" y="188" width="8" height="11" fill="#0b1928" opacity="0.85"/>
+  <rect x="590" y="190" width="3" height="16" fill="#0b1928" opacity="0.7"/>
+  <!-- Second distant vessel -->
+  <rect x="380" y="204" width="60" height="9" fill="#0b1928" opacity="0.5"/>
+  <rect x="410" y="197" width="6" height="8" fill="#0b1928" opacity="0.5"/>
+  <!-- Third distant vessel -->
+  <rect x="800" y="206" width="45" height="7" fill="#0b1928" opacity="0.4"/>
+  <rect x="818" y="200" width="5" height="7" fill="#0b1928" opacity="0.4"/>
+
+  <!-- Horizon glow -->
+  <rect x="0" y="200" width="1200" height="30" fill="url(#gGlow)"/>
+
+  <!-- Sea base -->
+  <rect y="212" width="1200" height="168" fill="url(#gSea)"/>
+
+  <!-- Wave layer 1 - long gentle far waves -->
+  <path d="M0,230 Q60,224 120,230 Q180,236 240,230 Q300,224 360,230 Q420,236 480,230 Q540,224 600,230 Q660,236 720,230 Q780,224 840,230 Q900,236 960,230 Q1020,224 1080,230 Q1140,236 1200,230 L1200,240 Q1140,246 1080,240 Q1020,234 960,240 Q900,246 840,240 Q780,234 720,240 Q660,246 600,240 Q540,234 480,240 Q420,246 360,240 Q300,234 240,240 Q180,246 120,240 Q60,234 0,240Z" fill="#1e3d5c" opacity="0.6"/>
+
+  <!-- Wave layer 2 -->
+  <path d="M0,255 Q50,248 100,255 Q155,262 210,255 Q265,248 320,255 Q375,262 430,255 Q490,248 550,256 Q610,264 670,256 Q725,248 780,255 Q840,263 900,256 Q955,248 1010,255 Q1070,263 1130,256 Q1165,250 1200,256 L1200,268 Q1165,274 1130,268 Q1070,261 1010,268 Q955,275 900,268 Q840,261 780,268 Q725,275 670,268 Q610,261 550,268 Q490,275 430,268 Q375,261 320,268 Q265,275 210,268 Q155,261 100,268 Q50,275 0,268Z" fill="#1c3855" opacity="0.55"/>
+
+  <!-- Wave layer 3 - mid -->
+  <path d="M0,282 Q40,275 80,282 Q125,290 165,282 Q210,274 255,282 Q300,291 345,282 Q395,273 445,282 Q495,292 545,282 Q595,272 650,282 Q705,293 760,282 Q810,271 860,282 Q915,293 970,283 Q1020,272 1075,282 Q1130,293 1200,284 L1200,296 Q1130,305 1075,296 Q1020,285 970,295 Q915,305 860,295 Q810,283 760,294 Q705,305 650,294 Q595,283 545,294 Q495,305 445,294 Q395,284 345,294 Q300,303 255,294 Q210,285 165,294 Q125,302 80,294 Q40,286 0,294Z" fill="#1a3450" opacity="0.65"/>
+
+  <!-- Wave layer 4 - choppier foreground -->
+  <path d="M0,308 Q30,300 60,308 Q90,317 125,308 Q160,299 195,308 Q230,318 265,308 Q300,298 340,308 Q380,319 415,308 Q450,297 490,308 Q530,320 565,309 Q600,297 640,308 Q680,320 715,309 Q750,297 790,308 Q830,320 865,309 Q900,297 940,308 Q980,320 1015,309 Q1050,297 1090,308 Q1130,319 1200,310 L1200,322 Q1130,330 1090,322 Q1050,312 1015,321 Q980,331 940,321 Q900,310 865,321 Q830,332 790,321 Q750,310 715,321 Q680,332 640,321 Q600,310 565,321 Q530,332 490,321 Q450,310 415,321 Q380,331 340,321 Q300,310 265,321 Q230,331 195,321 Q160,311 125,321 Q90,330 60,321 Q30,312 0,321Z" fill="#183050" opacity="0.7"/>
+
+  <!-- Whitecap highlights layer 1 -->
+  <path d="M20,290 Q30,287 40,290" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M100,276 Q115,273 130,276" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.35"/>
+  <path d="M220,285 Q235,282 250,285" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M380,270 Q398,267 416,270" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M510,280 Q525,277 542,280" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M680,275 Q700,272 718,275" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.35"/>
+  <path d="M850,285 Q866,282 882,285" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <path d="M1000,278 Q1018,275 1034,278" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.3"/>
+  <path d="M1140,288 Q1155,285 1170,288" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.35"/>
+
+  <!-- Whitecap highlights layer 2 - foreground -->
+  <path d="M50,318 Q68,313 86,318" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.45"/>
+  <path d="M175,310 Q196,305 215,310" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M310,320 Q330,315 352,320" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.5"/>
+  <path d="M460,312 Q480,307 502,312" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M620,318 Q640,313 660,318" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.45"/>
+  <path d="M780,310 Q800,305 822,310" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
+  <path d="M940,316 Q960,311 980,316" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.45"/>
+  <path d="M1080,308 Q1100,303 1122,308" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
+
+  <!-- Very subtle light on water surface -->
+  <ellipse cx="600" cy="250" rx="300" ry="20" fill="#2a5580" opacity="0.08"/>
+</svg>`;
+
+  const encoded = 'data:image/svg+xml,' + encodeURIComponent(svgSea);
+  const container = document.getElementById('sea-strips');
+  if (!container) return;
+
+  const N = 20;
+  const stripPct = 100 / N;
+
+  // Y offsets — varied, irregular, alternating
+  const offsets = [6, -22, 14, -10, 26, -4, 18, -28, 8, -16, 22, -6, 12, -24, 4, -18, 28, -8, 10, -20];
+
+  for (let i = 0; i < N; i++) {
+    const strip = document.createElement('div');
+    const left = i * stripPct;
+    const offset = offsets[i] || 0;
+    strip.style.cssText = [
+      'position:absolute',
+      `left:${left}%`,
+      `width:${stripPct + 0.15}%`, // tiny overlap to prevent hairline gaps
+      'top:0',
+      'bottom:0',
+      `background-image:url("${encoded}")`,
+      `background-size:${N * 100}% 100%`,
+      `background-position:${(i / (N - 1)) * 100}% 0%`,
+      'background-repeat:no-repeat',
+      `transform:translateY(${offset}px)`,
+      'will-change:transform'
+    ].join(';');
+    container.appendChild(strip);
+  }
+})();
 </script>
 
 </body>

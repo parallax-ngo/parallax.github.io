@@ -318,10 +318,15 @@ nav {
 
 /* ---- FOOTER ---- */
 footer {
-  border-top: 1px solid var(--rule);
+  background: #0A0A0A;
+  border-top: none;
+  width: 100%;
+}
+
+.footer-inner {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 2rem 3rem;
+  padding: 2.5rem 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -466,11 +471,14 @@ footer {
 
 <!-- FOOTER / CONTACT -->
 <footer id="contact">
-  <p style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.04em;color:rgba(0,0,0,0.35);line-height:1.7;max-width:600px;">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales incorporated in December 2025 (reg no. 16887325).</p>
-  <div style="display:flex;align-items:center;gap:1.5rem;">
-    <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(0,0,0,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#0A0A0A'" onmouseout="this.style.color='rgba(0,0,0,0.45)'">info@parallax.ngo</a>
-    <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(0,0,0,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#0A0A0A'" onmouseout="this.style.color='rgba(0,0,0,0.45)'">Instagram</a>
-    <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(0,0,0,0.45);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#0A0A0A'" onmouseout="this.style.color='rgba(0,0,0,0.45)'">LinkedIn</a>
+  <div class="footer-inner">
+    <img src="White.png" alt="Parallax" style="height:28px; display:block; opacity:0.85;">
+    <p style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);line-height:1.7;max-width:500px;text-align:center;">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales incorporated in December 2025 (reg no. 16887325).</p>
+    <div style="display:flex;align-items:center;gap:1.5rem;">
+      <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">info@parallax.ngo</a>
+      <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Instagram</a>
+      <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">LinkedIn</a>
+    </div>
   </div>
 </footer>
 

@@ -46,26 +46,6 @@ nav {
   height: 60px;
 }
 
-.nav-wordmark {
-  font-family: var(--sans);
-  font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.nav-wordmark span {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background: var(--orange);
-  border-radius: 50%;
-  margin-left: 5px;
-  vertical-align: middle;
-  position: relative;
-  top: -1px;
-}
-
 .nav-right {
   display: flex;
   align-items: center;
@@ -320,7 +300,6 @@ nav {
   color: var(--mid);
 }
 
-
 .btn {
   display: flex;
   align-items: center;
@@ -461,33 +440,6 @@ footer {
   gap: 2rem;
 }
 
-.footer-contact {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.footer-meta {
-  font-family: var(--sans);
-  font-size: 0.65rem;
-  font-weight: 500;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: rgba(0,0,0,0.25);
-  text-align: right;
-  line-height: 2;
-}
-
-.icon-btn {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
 /* ---- REVEAL ANIMATIONS ---- */
 .reveal {
   opacity: 0;
@@ -499,7 +451,6 @@ footer {
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
 
-/* Hero animates in on load */
 .hero-kicker  { animation: up 0.7s ease 0.1s both; }
 .hero-headline { animation: up 0.8s ease 0.25s both; }
 .hero-rule-row { animation: up 0.7s ease 0.5s both; }
@@ -510,10 +461,7 @@ footer {
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 800px) {
-  nav, .hero, .page-section, footer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
+  nav, .hero, .page-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
   .hero-rule-row, .section-header, .pilot-body { grid-template-columns: 1fr; gap: 1.5rem; }
   .objectives { grid-template-columns: 1fr; }
   .objective-item { border-right: none; border-bottom: 1px solid var(--rule); }
@@ -570,7 +518,7 @@ footer {
 
   <div class="pilot-body reveal">
     <div>
-      <p class="body-text">Our pilot project investigates violence against refugees and people seeking asylum, who attempt to seek safe haven in the UK via the <strong> English Channel/La Manche</strong>.</p>
+      <p class="body-text">Our pilot project investigates violence against refugees and people seeking asylum, who attempt to seek safe haven in the UK via the <strong>English Channel/La Manche</strong>.</p>
       <p class="body-text">Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.</p>
     </div>
     <div>
@@ -582,7 +530,7 @@ footer {
   <div class="objectives reveal">
     <div class="objective-item">
       <div class="objective-num">01</div>
-      <div class="objective-title">Legal Evidence</div>
+      <div class="objective-title">Evidence</div>
       <p class="objective-body">Develop evidence to the highest digital standards for use in international legal proceedings.</p>
     </div>
     <div class="objective-item">
@@ -602,10 +550,8 @@ footer {
 <div class="partners-section" id="partners">
   <div class="partners-inner">
     <div class="partners-header reveal">
-      <div class="section-num" style="color:rgba(255,255,255,0.35);">
-        Partners
-      </div>
-      <p class="partners-intro">Organisations we work alongside to share knowledge, build knowledge, and pursue accountability.</p>
+      <div class="section-num" style="color:rgba(255,255,255,0.35);">Partners</div>
+      <p class="partners-intro">Organisations we work alongside to share knowledge, build evidence, and pursue accountability.</p>
     </div>
     <div class="partners-grid reveal">
       <div class="partner-card">
@@ -625,10 +571,13 @@ footer {
   <div class="footer-inner">
     <img src="White.png" alt="Parallax" style="height:28px; display:block; opacity:0.85;">
     <p style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);line-height:1.7;max-width:500px;text-align:left;">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales, incorporated in December 2025 (reg no. 16887325). Registered address: 86-90 Paul Street, London, United Kingdom, EC2A 4NE.</p>
-    <div style="display:flex;align-items:center;gap:1.5rem;">
-      <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">info@parallax.ngo</a>
-      <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Instagram</a>
-      <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">LinkedIn</a>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem;">
+      <div style="display:flex;align-items:center;gap:1.5rem;">
+        <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">info@parallax.ngo</a>
+        <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Instagram</a>
+        <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">LinkedIn</a>
+      </div>
+      <p style="font-family:var(--sans);font-size:0.6rem;font-weight:400;letter-spacing:0.04em;color:rgba(255,255,255,0.25);line-height:1;">Brand design by <a href="https://likeamoth.co.uk" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Tim Greenhalgh</a></p>
     </div>
   </div>
 </footer>

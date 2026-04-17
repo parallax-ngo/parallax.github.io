@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Parallax - Research Agency</title>
+<title>Parallax — Independent Research Agency</title>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Marcellus&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -197,78 +197,121 @@ nav {
   color: var(--black);
 }
 
-/* ---- PILOT SECTION ---- */
-.pilot-intro {
-  background: var(--orange);
-  border-radius: 4px;
-  padding: 2.5rem 3rem;
+.case-title-block {
+  padding: 2rem 2.5rem;
+  background: var(--black);
   margin-bottom: 3rem;
+  display: flex;
+  align-items: baseline;
+  gap: 2rem;
 }
 
-.pilot-intro p {
-  font-size: 1.2rem;
-  line-height: 1.75;
-  color: #fff;
-}
-
-.pilot-intro strong {
+.case-label {
+  font-family: var(--sans);
+  font-size: 0.6rem;
   font-weight: 700;
-  border-bottom: 1px solid rgba(255,255,255,0.5);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.case-title {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #fff;
+  letter-spacing: -0.01em;
+}
+
+/* ---- PILOT SECTION ---- */
+.pilot-context {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pilot-context::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  background: var(--orange);
+}
+
+.pilot-pull {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.25;
+  color: var(--black);
+  max-width: 780px;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pilot-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
 }
 
 .body-text {
   font-size: 1.05rem;
   line-height: 1.85;
-  color: rgba(0,0,0,0.75);
-  margin-bottom: 2rem;
+  color: rgba(0,0,0,0.72);
+  margin-bottom: 1.5rem;
 }
+
+.body-text:last-child { margin-bottom: 0; }
 
 .body-text strong {
   color: var(--black);
   font-weight: 600;
 }
 
-.body-text:last-child { margin-bottom: 0; }
-
 .rule { height: 1px; background: var(--rule); margin: 2.5rem 0; }
 
-/* Objectives block */
+/* Objectives */
 .objectives {
+  border-top: 1px solid var(--rule);
+  padding-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
-  border: 1px solid var(--rule);
-  border-radius: 4px;
-  overflow: hidden;
-  margin-top: 3rem;
+  gap: 2.5rem;
 }
 
 .objective-item {
-  padding: 2rem;
-  border-right: 1px solid var(--rule);
   position: relative;
+  padding-top: 1.25rem;
+  border-top: 2px solid var(--orange);
 }
-
-.objective-item:last-child { border-right: none; }
 
 .objective-num {
   font-family: var(--sans);
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   color: var(--orange);
-  line-height: 1;
-  margin-bottom: 1rem;
-  opacity: 0.25;
+  margin-bottom: 0.75rem;
 }
 
 .objective-title {
-  font-family: var(--sans);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  font-family: var(--serif);
+  font-size: 1.25rem;
   color: var(--black);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
 }
 
 .objective-body {
@@ -314,6 +357,96 @@ nav {
 .btn.primary:hover {
   background: #d93d10;
   border-color: #d93d10;
+}
+
+/* ---- PARTNERS ---- */
+.partners-section {
+  background: #111;
+  width: 100%;
+}
+
+.partners-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+}
+
+.partners-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.partners-intro {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.5);
+  font-style: italic;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.partner-card {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 3.5rem;
+  align-items: start;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.partner-card:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.partner-logo {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  filter: brightness(0) invert(0.15);
+  transition: filter 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+  filter: brightness(0) invert(0.85);
+}
+
+.partner-info {
+  padding-top: 0.25rem;
+}
+
+.partner-name {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.3rem;
+  line-height: 1.2;
+}
+
+.partner-location {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 1.25rem;
+}
+
+.partner-desc {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.45);
 }
 
 /* ---- FOOTER ---- */
@@ -386,13 +519,15 @@ footer {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-  .hero-rule-row, .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-rule-row, .section-header, .pilot-body { grid-template-columns: 1fr; gap: 1.5rem; }
   .objectives { grid-template-columns: 1fr; }
   .objective-item { border-right: none; border-bottom: 1px solid var(--rule); }
   .objective-item:last-child { border-bottom: none; }
   .nav-right { display: none; }
   footer { flex-wrap: wrap; gap: 1.25rem; }
-  .footer-meta { text-align: left; }
+  .partners-header { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; padding-bottom: 2rem; }
+  .partner-card { grid-template-columns: 1fr; gap: 1.5rem; }
+  .partner-logo { max-width: 180px; }
 }
 </style>
 </head>
@@ -401,13 +536,15 @@ footer {
 <nav>
   <a href="#"><img src="Black.png" alt="Parallax" style="height:32px; display:block;"></a>
   <div class="nav-right">
+    <a class="nav-link" href="#about">About</a>
     <a class="nav-link" href="#pilot">Pilot Project</a>
+    <a class="nav-link" href="#partners">Partners</a>
     <a class="nav-link" href="#contact">Contact</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" id="about">
   <div class="hero-kicker">UK-based independent research agency</div>
   <img src="Black.png" alt="Parallax" style="height:52px; display:block; margin-bottom:2rem;">
   <h1 class="hero-headline">We investigate state and <em>corporate violence.</em></h1>
@@ -426,29 +563,27 @@ footer {
     <h2 class="section-title">Violence against refugees and people seeking asylum in the UK via the Channel</h2>
   </div>
 
-  <div class="pilot-intro reveal">
-    <p>
-      As an organisation based in the UK, our work begins here. Our pilot project investigates violence against refugees and people seeking asylum attempting to seek safe haven in the UK via the <strong>Channel</strong>. Physical violence is enacted by law enforcement — including beatings, rubber bullets and evictions — but stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a 'threat'.
-    </p>
+  <div class="case-title-block reveal">
+    <div class="case-label">Case file</div>
+    <h3 class="case-title">Crimes Against Humanity at the UK–France Border</h3>
   </div>
 
-  <div id="sea-strips" style="position:relative;height:380px;background:#07101c;margin:3rem -3rem;overflow:hidden;"></div>
+  <div class="pilot-context reveal">UK · English Channel · Ongoing</div>
 
-  <p class="body-text reveal">
-    Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.
+  <p class="pilot-pull reveal">
+    Physical violence is enacted by law enforcement — beatings, rubber bullets, evictions — but stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a 'threat'.
   </p>
 
-  <div class="rule"></div>
-
-  <p class="body-text reveal">
-    International law frameworks have, since their inception, upheld neo-colonial power structures that allow Global North states like the UK to evade accountability and continue to perpetuate colonial inequities. As of December 2025, only actors from the Global South have ever been prosecuted by any international tribunals, including through the <strong>International Criminal Court (ICC)</strong>.
-  </p>
-
-  <div class="rule"></div>
-
-  <p class="body-text reveal">
-    Our methodology builds upon existing knowledge bases, working with human rights organisations, grassroots groups and academics in France and the UK. We collate and analyse partner data alongside our own research to identify patterns of violence and avoid duplicating harmful fieldwork.
-  </p>
+  <div class="pilot-body reveal">
+    <div>
+      <p class="body-text">As an organisation based in the UK, our work begins here. Our pilot project investigates violence against refugees and people seeking asylum attempting to seek safe haven in the UK via the <strong>Channel</strong>.</p>
+      <p class="body-text">Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.</p>
+    </div>
+    <div>
+      <p class="body-text">International law frameworks have, since their inception, upheld neo-colonial power structures that allow Global North states like the UK to evade accountability. As of December 2025, only actors from the Global South have ever been prosecuted by any international tribunals, including through the <strong>International Criminal Court (ICC)</strong>.</p>
+      <p class="body-text">Our methodology builds upon existing knowledge bases, working with human rights organisations, grassroots groups and academics in France and the UK. We collate and analyse partner data alongside our own research to identify patterns of violence and avoid duplicating harmful fieldwork.</p>
+    </div>
+  </div>
 
   <div class="objectives reveal">
     <div class="objective-item">
@@ -469,11 +604,33 @@ footer {
   </div>
 </div>
 
+<!-- PARTNERS -->
+<div class="partners-section" id="partners">
+  <div class="partners-inner">
+    <div class="partners-header reveal">
+      <div class="section-num" style="color:rgba(255,255,255,0.35);">
+        Partners
+      </div>
+      <p class="partners-intro">Organisations we work alongside to build evidence, share knowledge, and pursue accountability.</p>
+    </div>
+    <div class="partners-grid reveal">
+      <div class="partner-card">
+        <img src="HRO_logo.png" alt="Human Rights Observers" class="partner-logo">
+        <div class="partner-info">
+          <div class="partner-name">Human Rights Observers</div>
+          <div class="partner-location">Calais / Grande-Synthe, France</div>
+          <p class="partner-desc">HRO deploys trained observers to document police violence, forced evictions, and rights violations against people on the move at the UK–France border — producing the primary field evidence that underpins our case.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER / CONTACT -->
 <footer id="contact">
   <div class="footer-inner">
     <img src="White.png" alt="Parallax" style="height:28px; display:block; opacity:0.85;">
-    <p style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);line-height:1.7;max-width:500px;text-align:center;">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales, incorporated in December 2025 (reg no. 16887325). Registered address - 86-90 Paul Street, London, United Kingdom, EC2A 4NE.</p>
+    <p style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);line-height:1.7;max-width:500px;text-align:left;">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales, incorporated in December 2025 (reg no. 16887325). Registered address: 86-90 Paul Street, London, United Kingdom, EC2A 4NE.</p>
     <div style="display:flex;align-items:center;gap:1.5rem;">
       <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">info@parallax.ngo</a>
       <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Instagram</a>
@@ -483,137 +640,11 @@ footer {
 </footer>
 
 <script>
-/* ---- Reveal observer ---- */
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
 }, { threshold: 0.1 });
 revealEls.forEach(el => io.observe(el));
-
-/* ---- Sea strip generator ---- */
-(function() {
-  const svgSea = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMid slice">
-  <defs>
-    <linearGradient id="gSky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0a1018"/>
-      <stop offset="70%" stop-color="#162233"/>
-      <stop offset="100%" stop-color="#1e3348"/>
-    </linearGradient>
-    <linearGradient id="gSea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#1a3350"/>
-      <stop offset="50%" stop-color="#0f2035"/>
-      <stop offset="100%" stop-color="#06101c"/>
-    </linearGradient>
-    <linearGradient id="gGlow" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#1e3348" stop-opacity="0"/>
-      <stop offset="40%" stop-color="#2a4e70" stop-opacity="0.35"/>
-      <stop offset="60%" stop-color="#2a4e70" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#1e3348" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-
-  <!-- Sky -->
-  <rect width="1200" height="380" fill="url(#gSky)"/>
-
-  <!-- Cloud mass top left -->
-  <ellipse cx="160" cy="60" rx="200" ry="55" fill="#0d1928" opacity="0.7"/>
-  <ellipse cx="320" cy="40" rx="160" ry="40" fill="#0e1c2c" opacity="0.6"/>
-  <ellipse cx="80" cy="80" rx="140" ry="40" fill="#0c1622" opacity="0.5"/>
-
-  <!-- Cloud mass top right -->
-  <ellipse cx="980" cy="50" rx="220" ry="50" fill="#0d1928" opacity="0.65"/>
-  <ellipse cx="1100" cy="75" rx="160" ry="45" fill="#0e1c2c" opacity="0.55"/>
-  <ellipse cx="850" cy="65" rx="130" ry="35" fill="#0c1622" opacity="0.45"/>
-
-  <!-- Mid cloud wisps -->
-  <ellipse cx="500" cy="100" rx="180" ry="30" fill="#0f1e30" opacity="0.4"/>
-  <ellipse cx="720" cy="85" rx="200" ry="28" fill="#0f1e30" opacity="0.35"/>
-
-  <!-- Distant ship silhouette on horizon -->
-  <rect x="540" y="198" width="120" height="14" fill="#0b1928" opacity="0.85"/>
-  <rect x="570" y="185" width="12" height="14" fill="#0b1928" opacity="0.85"/>
-  <rect x="618" y="188" width="8" height="11" fill="#0b1928" opacity="0.85"/>
-  <rect x="590" y="190" width="3" height="16" fill="#0b1928" opacity="0.7"/>
-  <!-- Second distant vessel -->
-  <rect x="380" y="204" width="60" height="9" fill="#0b1928" opacity="0.5"/>
-  <rect x="410" y="197" width="6" height="8" fill="#0b1928" opacity="0.5"/>
-  <!-- Third distant vessel -->
-  <rect x="800" y="206" width="45" height="7" fill="#0b1928" opacity="0.4"/>
-  <rect x="818" y="200" width="5" height="7" fill="#0b1928" opacity="0.4"/>
-
-  <!-- Horizon glow -->
-  <rect x="0" y="200" width="1200" height="30" fill="url(#gGlow)"/>
-
-  <!-- Sea base -->
-  <rect y="212" width="1200" height="168" fill="url(#gSea)"/>
-
-  <!-- Wave layer 1 - long gentle far waves -->
-  <path d="M0,230 Q60,224 120,230 Q180,236 240,230 Q300,224 360,230 Q420,236 480,230 Q540,224 600,230 Q660,236 720,230 Q780,224 840,230 Q900,236 960,230 Q1020,224 1080,230 Q1140,236 1200,230 L1200,240 Q1140,246 1080,240 Q1020,234 960,240 Q900,246 840,240 Q780,234 720,240 Q660,246 600,240 Q540,234 480,240 Q420,246 360,240 Q300,234 240,240 Q180,246 120,240 Q60,234 0,240Z" fill="#1e3d5c" opacity="0.6"/>
-
-  <!-- Wave layer 2 -->
-  <path d="M0,255 Q50,248 100,255 Q155,262 210,255 Q265,248 320,255 Q375,262 430,255 Q490,248 550,256 Q610,264 670,256 Q725,248 780,255 Q840,263 900,256 Q955,248 1010,255 Q1070,263 1130,256 Q1165,250 1200,256 L1200,268 Q1165,274 1130,268 Q1070,261 1010,268 Q955,275 900,268 Q840,261 780,268 Q725,275 670,268 Q610,261 550,268 Q490,275 430,268 Q375,261 320,268 Q265,275 210,268 Q155,261 100,268 Q50,275 0,268Z" fill="#1c3855" opacity="0.55"/>
-
-  <!-- Wave layer 3 - mid -->
-  <path d="M0,282 Q40,275 80,282 Q125,290 165,282 Q210,274 255,282 Q300,291 345,282 Q395,273 445,282 Q495,292 545,282 Q595,272 650,282 Q705,293 760,282 Q810,271 860,282 Q915,293 970,283 Q1020,272 1075,282 Q1130,293 1200,284 L1200,296 Q1130,305 1075,296 Q1020,285 970,295 Q915,305 860,295 Q810,283 760,294 Q705,305 650,294 Q595,283 545,294 Q495,305 445,294 Q395,284 345,294 Q300,303 255,294 Q210,285 165,294 Q125,302 80,294 Q40,286 0,294Z" fill="#1a3450" opacity="0.65"/>
-
-  <!-- Wave layer 4 - choppier foreground -->
-  <path d="M0,308 Q30,300 60,308 Q90,317 125,308 Q160,299 195,308 Q230,318 265,308 Q300,298 340,308 Q380,319 415,308 Q450,297 490,308 Q530,320 565,309 Q600,297 640,308 Q680,320 715,309 Q750,297 790,308 Q830,320 865,309 Q900,297 940,308 Q980,320 1015,309 Q1050,297 1090,308 Q1130,319 1200,310 L1200,322 Q1130,330 1090,322 Q1050,312 1015,321 Q980,331 940,321 Q900,310 865,321 Q830,332 790,321 Q750,310 715,321 Q680,332 640,321 Q600,310 565,321 Q530,332 490,321 Q450,310 415,321 Q380,331 340,321 Q300,310 265,321 Q230,331 195,321 Q160,311 125,321 Q90,330 60,321 Q30,312 0,321Z" fill="#183050" opacity="0.7"/>
-
-  <!-- Whitecap highlights layer 1 -->
-  <path d="M20,290 Q30,287 40,290" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.4"/>
-  <path d="M100,276 Q115,273 130,276" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.35"/>
-  <path d="M220,285 Q235,282 250,285" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.3"/>
-  <path d="M380,270 Q398,267 416,270" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.4"/>
-  <path d="M510,280 Q525,277 542,280" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.3"/>
-  <path d="M680,275 Q700,272 718,275" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.35"/>
-  <path d="M850,285 Q866,282 882,285" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.4"/>
-  <path d="M1000,278 Q1018,275 1034,278" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.3"/>
-  <path d="M1140,288 Q1155,285 1170,288" stroke="#4a7fa0" stroke-width="1.5" fill="none" opacity="0.35"/>
-
-  <!-- Whitecap highlights layer 2 - foreground -->
-  <path d="M50,318 Q68,313 86,318" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.45"/>
-  <path d="M175,310 Q196,305 215,310" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
-  <path d="M310,320 Q330,315 352,320" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.5"/>
-  <path d="M460,312 Q480,307 502,312" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
-  <path d="M620,318 Q640,313 660,318" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.45"/>
-  <path d="M780,310 Q800,305 822,310" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
-  <path d="M940,316 Q960,311 980,316" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.45"/>
-  <path d="M1080,308 Q1100,303 1122,308" stroke="#5e94b5" stroke-width="2" fill="none" opacity="0.4"/>
-
-  <!-- Very subtle light on water surface -->
-  <ellipse cx="600" cy="250" rx="300" ry="20" fill="#2a5580" opacity="0.08"/>
-</svg>`;
-
-  const encoded = 'data:image/svg+xml,' + encodeURIComponent(svgSea);
-  const container = document.getElementById('sea-strips');
-  if (!container) return;
-
-  const N = 20;
-  const stripPct = 100 / N;
-
-  // Y offsets — varied, irregular, alternating
-  const offsets = [6, -22, 14, -10, 26, -4, 18, -28, 8, -16, 22, -6, 12, -24, 4, -18, 28, -8, 10, -20];
-
-  for (let i = 0; i < N; i++) {
-    const strip = document.createElement('div');
-    const left = i * stripPct;
-    const offset = offsets[i] || 0;
-    strip.style.cssText = [
-      'position:absolute',
-      `left:${left}%`,
-      `width:${stripPct + 0.15}%`, // tiny overlap to prevent hairline gaps
-      'top:0',
-      'bottom:0',
-      `background-image:url("${encoded}")`,
-      `background-size:${N * 100}% 100%`,
-      `background-position:${(i / (N - 1)) * 100}% 0%`,
-      'background-repeat:no-repeat',
-      `transform:translateY(${offset}px)`,
-      'will-change:transform'
-    ].join(';');
-    container.appendChild(strip);
-  }
-})();
 </script>
 
 </body>

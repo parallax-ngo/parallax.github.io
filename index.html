@@ -258,9 +258,46 @@ nav {
 
 .rule { height: 1px; background: var(--rule); margin: 2.5rem 0; }
 
+/* ---- CHANNEL BODY ---- */
+.channel-body {
+  margin-bottom: 3.5rem;
+}
+
+.channel-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.channel-lede {
+  font-family: var(--serif);
+  font-size: clamp(1.3rem, 2.2vw, 1.7rem);
+  line-height: 1.4;
+  color: var(--black);
+}
+
+.channel-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.channel-prose p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(0,0,0,0.72);
+}
+
+.channel-prose strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+body.dark .channel-prose p { color: rgba(221,217,208,0.7); }
+
 /* Objectives */
 .objectives {
-  border-top: 1px solid var(--rule);
   padding-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -395,7 +432,6 @@ nav {
   gap: 3rem;
   margin-bottom: 3.5rem;
   padding-bottom: 3.5rem;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .partners-intro {
@@ -578,14 +614,18 @@ footer {
 
 .hi {
   font-style: italic;
-  color: #fff;
+  color: #F74F20;
   font-weight: 600;
+}
+
+.meaning .hi {
+  color: #fff;
 }
 
 body.dark .meaning { background: #161616; border-top: none; }
 body.dark .meaning-body p { color: rgba(221,217,208,0.5); }
 body.dark .definition { color: rgba(221,217,208,0.85) !important; border-bottom-color: rgba(255,255,255,0.08); }
-body.dark .hi { color: #DDD9D0; }
+body.dark .meaning .hi { color: #DDD9D0; }
 
 /* ---- DARK MODE TOGGLE BUTTON ---- */
 .theme-toggle {
@@ -658,7 +698,7 @@ body.dark footer { background: #080808; }
 /* ---- RESPONSIVE ---- */
 @media (max-width: 800px) {
   nav, .hero, .page-section, .meaning-inner, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .hero-rule-row, .section-header, .pilot-body, .meaning-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .hero-rule-row, .section-header, .pilot-body, .meaning-inner, .channel-cols { grid-template-columns: 1fr; gap: 1.5rem; }
   .meaning-header { position: static; }
   .objectives { grid-template-columns: 1fr; }
   .objective-item { border-right: none; border-bottom: 1px solid var(--rule); }
@@ -741,18 +781,15 @@ body.dark footer { background: #080808; }
 
   <div class="pilot-context">UK · France · Belgium · 2018-Ongoing</div>
 
-  <p class="pilot-pull">
-    Physical violence is enacted by law enforcement: beatings, rubber bullets and evictions. But this violence stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a 'threat'. We seek to overhaul this inequity by applying the law to state actors who systematically violate their legal humanitarian obligations.
-  </p>
-
-  <div class="pilot-body">
-    <div>
-      <p class="body-text">Our pilot project investigates violence against refugees and people seeking asylum who attempt to seek safe haven in the UK via the <strong>English Channel/La Manche</strong>.</p>
-      <p class="body-text">Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.</p>
-    </div>
-    <div>
-      <p class="body-text">International law frameworks have, since their inception, upheld neo-colonial power structures that allow Global North states like the UK to evade accountability.</p>
-      <p class="body-text">Our methodology builds upon existing knowledge bases, working with human rights organisations, grassroots groups and academics in France and the UK. We collate and analyse partner data alongside our own research to identify patterns of violence.</p>
+  <div class="channel-body">
+    <div class="channel-cols">
+      <p class="channel-lede">
+        Our pilot project investigates <span class="hi">violence against refugees</span> and people seeking asylum attempting to reach safe haven in the UK via the Channel &mdash; physical violence enacted by law enforcement that stems from hostile Government policies criminalising migration.
+      </p>
+      <div class="channel-prose">
+        <p>Beatings, rubber bullets, forced evictions. The rhetoric frames people seeking safety as a <strong>&ldquo;threat&rdquo;</strong>; the law, selectively applied, provides cover. This is a clear example of how the UK ignores or invokes international humanitarian obligations when it suits its interests.</p>
+        <p>Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. We build on extensive primary research already conducted by partners in the field, supplementing their data with open-source geospatial analysis to identify patterns of violence: physical assault, forced evictions, and strategic environmental interventions such as the redesignation of encampment areas as conservation sites.</p>
+      </div>
     </div>
   </div>
 

@@ -577,26 +577,23 @@ body.dark .hi { color: #DDD9D0; }
 
 /* ---- DARK MODE TOGGLE BUTTON ---- */
 .theme-toggle {
-  font-family: var(--sans);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--mid);
   background: none;
   border: 1px solid var(--rule);
   border-radius: 2px;
-  padding: 0.35rem 0.75rem;
   cursor: pointer;
   transition: color 0.2s, border-color 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover { color: var(--black); border-color: rgba(0,0,0,0.25); }
 
-.theme-toggle .toggle-icon { font-size: 0.8rem; }
+.theme-toggle .toggle-icon { font-size: 0.75rem; line-height: 1; }
 
 /* ---- DARK MODE ---- */
 body.dark {
@@ -668,12 +665,11 @@ body.dark footer { background: #080808; }
   <a href="#"><img src="Black.png" alt="Parallax" class="nav-logo-img" style="height:32px; display:block;"></a>
   <div class="nav-right">
     <a class="nav-link" href="#about">About</a>
-    <a class="nav-link" href="#pilot">Current Investigation</a>
+    <a class="nav-link" href="#pilot">Investigations</a>
     <a class="nav-link" href="#partners">Partners</a>
     <a class="nav-link" href="#contact">Contact</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
       <span class="toggle-icon">○</span>
-      <span class="toggle-label">Dark</span>
     </button>
   </div>
 </nav>
@@ -804,13 +800,11 @@ body.dark footer { background: #080808; }
 
 <script>
 const toggle = document.getElementById('themeToggle');
-const label = toggle.querySelector('.toggle-label');
 const icon = toggle.querySelector('.toggle-icon');
 const logoImg = document.querySelector('.nav-logo-img');
 
 toggle.addEventListener('click', () => {
   const isDark = document.body.classList.toggle('dark');
-  label.textContent = isDark ? 'Light' : 'Dark';
   icon.textContent = isDark ? '●' : '○';
   logoImg.src = isDark ? 'White.png' : 'Black.png';
 });

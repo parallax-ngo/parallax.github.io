@@ -163,14 +163,7 @@ nav {
 }
 
 .section-num::before {
-  content: '';
-  display: inline-block;
-  width: 14px;
-  height: 1px;
-  background: var(--rule);
-  position: relative;
-  top: 0.55em;
-  flex-shrink: 0;
+  display: none;
 }
 
 .section-title {
@@ -341,6 +334,61 @@ nav {
   border-color: #d93d10;
 }
 
+/* ---- MAP STRIP ---- */
+.map-strip {
+  position: relative;
+  margin: 0 -3rem 3rem;
+  height: 340px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+
+.map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 58% 38%;
+  display: block;
+  opacity: 0.85;
+}
+
+.map-strip::before,
+.map-strip::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 80px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.map-strip::before {
+  top: 0;
+  background: linear-gradient(to bottom, #FAFAF8, transparent);
+}
+
+.map-strip::after {
+  bottom: 0;
+  background: linear-gradient(to top, #FAFAF8, transparent);
+}
+
+.map-caption {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  z-index: 3;
+}
+
+body.dark .map-strip::before { background: linear-gradient(to bottom, #0D0D0D, transparent); }
+body.dark .map-strip::after  { background: linear-gradient(to top,   #0D0D0D, transparent); }
+
 /* ---- PARTNERS ---- */
 .partners-section {
   background: #111;
@@ -443,7 +491,6 @@ footer {
   gap: 2rem;
 }
 
-
 .hero-kicker  { animation: up 0.7s ease 0.1s both; }
 .hero-headline { animation: up 0.8s ease 0.25s both; }
 .hero-rule-row { animation: up 0.7s ease 0.5s both; }
@@ -454,8 +501,8 @@ footer {
 
 /* ---- MEANING / THE NAME ---- */
 .meaning {
-  border-top: 1px solid var(--rule);
-  background: #FAFAF8;
+  border-top: none;
+  background: #0A0A0A;
 }
 
 .meaning-inner {
@@ -479,7 +526,7 @@ footer {
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--mid);
+  color: rgba(255,255,255,0.35);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -495,7 +542,7 @@ footer {
   font-family: var(--serif);
   font-size: clamp(2.2rem, 4vw, 3.5rem);
   line-height: 1;
-  color: var(--black);
+  color: #fff;
   margin-bottom: 0.5rem;
 }
 
@@ -505,7 +552,7 @@ footer {
   font-family: var(--sans);
   font-size: 0.75rem;
   font-weight: 400;
-  color: var(--mid);
+  color: rgba(255,255,255,0.35);
   letter-spacing: 0.04em;
 }
 
@@ -518,11 +565,11 @@ footer {
 .meaning-body p {
   font-size: 1.05rem;
   line-height: 1.85;
-  color: rgba(0,0,0,0.72);
+  color: rgba(255,255,255,0.55);
 }
 
 .meaning-body strong {
-  color: var(--black);
+  color: #fff;
   font-weight: 600;
 }
 
@@ -530,26 +577,26 @@ footer {
   font-family: var(--serif);
   font-size: 1.25rem !important;
   line-height: 1.6 !important;
-  color: var(--black) !important;
+  color: rgba(255,255,255,0.9) !important;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .pos {
   font-style: italic;
-  color: var(--mid);
+  color: rgba(255,255,255,0.35);
   font-size: 0.9rem;
 }
 
 .hi {
   font-style: italic;
-  color: var(--black);
+  color: #fff;
   font-weight: 600;
 }
 
-body.dark .meaning { background: #0D0D0D; border-top-color: rgba(255,255,255,0.08); }
-body.dark .meaning-body p { color: rgba(221,217,208,0.7); }
-body.dark .definition { color: #DDD9D0 !important; border-bottom-color: rgba(255,255,255,0.08); }
+body.dark .meaning { background: #161616; border-top: none; }
+body.dark .meaning-body p { color: rgba(221,217,208,0.5); }
+body.dark .definition { color: rgba(221,217,208,0.85) !important; border-bottom-color: rgba(255,255,255,0.08); }
 body.dark .hi { color: #DDD9D0; }
 
 /* ---- DARK MODE TOGGLE BUTTON ---- */
@@ -645,8 +692,7 @@ body.dark footer { background: #080808; }
   <a href="#"><img src="Black.png" alt="Parallax" class="nav-logo-img" style="height:32px; display:block;"></a>
   <div class="nav-right">
     <a class="nav-link" href="#about">About</a>
-    <a class="nav-link" href="#name">The Name</a>
-    <a class="nav-link" href="#pilot">Pilot Project</a>
+    <a class="nav-link" href="#pilot">Current Investigation</a>
     <a class="nav-link" href="#partners">Partners</a>
     <a class="nav-link" href="#contact">Contact</a>
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
@@ -661,7 +707,7 @@ body.dark footer { background: #080808; }
   <div class="hero-kicker">non-profit research agency</div>
   <h1 class="hero-headline">We investigate state and <em>corporate violence.</em></h1>
     <p class="hero-lead">
-      Parallax uses spatial and open-source methods to transform complex investigations into strategic tools for human rights prosecution — bridging grassroots organisations and legal experts to disrupt systemic power imbalances in international law.
+      Parallax uses spatial and open-source methods to transform complex investigations into strategic tools for human rights prosecution, bridging grassroots organisations and legal experts to disrupt systemic power imbalances in international law.
     </p>
   </div>
 </div>
@@ -670,20 +716,20 @@ body.dark footer { background: #080808; }
 <section class="meaning" id="name">
   <div class="meaning-inner">
     <div class="meaning-header">
-      <span class="eyebrow"><span class="mark">◆</span> The name</span>
+      <span class="eyebrow"><span class="mark">◆</span> Our name</span>
       <h2 class="meaning-word">Parallax<span class="dot">.</span></h2>
       <p class="meaning-phonetic"> /ˈparəlaks / · noun</p>
     </div>
 
     <div class="meaning-body">
       <p class="definition">
-        The apparent displacement, or difference of position, of an object, as seen from two different stations, or points of view. <span class="pos">— astron., opt.</span>
+        The apparent displacement, or difference of position, of an object, as seen from two different stations or points of view. <span class="pos">— astron., opt.</span>
       </p>
       <p>
-        In astronomy, parallax is how we measure distance to the stars &mdash; by noting how their position appears to shift as Earth moves in its orbit. The star does not move. The perspective does.
+        In astronomy, parallax is how we measure distance to the stars, by noting how their position appears to shift as Earth moves in its orbit. The star does not move. The perspective does.
       </p>
       <p>
-        We take the word as a <strong>method</strong>. For every official account of what happened, there is another line of sight &mdash; from the ground, from the margins, from the communities who bear the cost. What looks definitive from one angle rarely looks definitive from two.
+        We take the word as a <strong>method</strong>. For every official account of what happened, there is another line of sight: from the ground, from the margins, from the communities who bear the cost. What looks definitive from one angle rarely looks definitive from two.
       </p>
       <p>
         Counter-investigation is the discipline of <span class="hi">insisting on the second view</span>.
@@ -695,7 +741,7 @@ body.dark footer { background: #080808; }
 <!-- PILOT PROJECT -->
 <div class="page-section" id="pilot">
   <div class="section-header">
-    <div class="section-num">Pilot project</div>
+    <div class="section-num"><span style="color:var(--orange);font-size:0.5rem;">◆</span> Current investigation</div>
     <h2 class="section-title">Violence against refugees and people seeking asylum in the UK via the English Channel</h2>
   </div>
 
@@ -704,15 +750,20 @@ body.dark footer { background: #080808; }
     <h3 class="case-title">Crimes Against Humanity at the UK–France-Belgium Border</h3>
   </div>
 
+  <div class="map-strip">
+    <img src="border.png" alt="Map of the UK–France–Belgium border and English Channel" class="map-img">
+    <div class="map-caption">English Channel / La Manche · Strait of Dover</div>
+  </div>
+
   <div class="pilot-context">UK · France · Belgium · 2018-Ongoing</div>
 
   <p class="pilot-pull">
-    Physical violence is enacted by law enforcement - beatings, rubber bullets, evictions. But this violence stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a 'threat'. We seek to overhaul this inequity by applying the law to state actors who systematically violate their legal humanitarian obligations.
+    Physical violence is enacted by law enforcement: beatings, rubber bullets and evictions. But this violence stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a 'threat'. We seek to overhaul this inequity by applying the law to state actors who systematically violate their legal humanitarian obligations.
   </p>
 
   <div class="pilot-body">
     <div>
-      <p class="body-text">Our pilot project investigates violence against refugees and people seeking asylum, who attempt to seek safe haven in the UK via the <strong>English Channel/La Manche</strong>.</p>
+      <p class="body-text">Our pilot project investigates violence against refugees and people seeking asylum who attempt to seek safe haven in the UK via the <strong>English Channel/La Manche</strong>.</p>
       <p class="body-text">Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.</p>
     </div>
     <div>
@@ -744,8 +795,8 @@ body.dark footer { background: #080808; }
 <div class="partners-section" id="partners">
   <div class="partners-inner">
     <div class="partners-header">
-      <div class="section-num" style="color:rgba(255,255,255,0.35);">Partners</div>
-      <p class="partners-intro">Organisations we work alongside to share knowledge, build evidence, and pursue accountability.</p>
+      <div class="section-num" style="color:rgba(255,255,255,0.35);"><span style="color:var(--orange);font-size:0.5rem;">◆</span> Partners</div>
+      <p class="partners-intro">Organisations we work alongside to share knowledge, build evidence and pursue accountability.</p>
     </div>
     <div class="partners-grid">
       <div class="partner-card">

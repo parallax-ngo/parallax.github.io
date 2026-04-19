@@ -352,27 +352,6 @@ nav {
   opacity: 0.85;
 }
 
-.map-strip::before,
-.map-strip::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  height: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.map-strip::before {
-  top: 0;
-  background: linear-gradient(to bottom, #FAFAF8, transparent);
-}
-
-.map-strip::after {
-  bottom: 0;
-  background: linear-gradient(to top, #FAFAF8, transparent);
-}
-
 .map-caption {
   position: absolute;
   bottom: 1.25rem;
@@ -385,9 +364,6 @@ nav {
   color: rgba(255,255,255,0.4);
   z-index: 3;
 }
-
-body.dark .map-strip::before { background: linear-gradient(to bottom, #0D0D0D, transparent); }
-body.dark .map-strip::after  { background: linear-gradient(to top,   #0D0D0D, transparent); }
 
 /* ---- PARTNERS ---- */
 .partners-section {

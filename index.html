@@ -19,6 +19,11 @@
   --serif: 'Marcellus', serif;
 }
 
+::selection {
+  background: #F74F20;
+  color: #fff;
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -108,11 +113,9 @@ nav {
 }
 
 .hero-rule-row {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
   padding-top: 3rem;
   border-top: 1px solid var(--rule);
+  max-width: 720px;
 }
 
 .hero-rule-label {
@@ -440,16 +443,6 @@ footer {
   gap: 2rem;
 }
 
-/* ---- REVEAL ANIMATIONS ---- */
-.reveal {
-  opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.reveal.visible { opacity: 1; transform: none; }
-.reveal-d1 { transition-delay: 0.1s; }
-.reveal-d2 { transition-delay: 0.2s; }
-.reveal-d3 { transition-delay: 0.3s; }
 
 .hero-kicker  { animation: up 0.7s ease 0.1s both; }
 .hero-headline { animation: up 0.8s ease 0.25s both; }
@@ -458,6 +451,106 @@ footer {
   from { opacity:0; transform: translateY(14px); }
   to   { opacity:1; transform: none; }
 }
+
+/* ---- MEANING / THE NAME ---- */
+.meaning {
+  border-top: 1px solid var(--rule);
+  background: #FAFAF8;
+}
+
+.meaning-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 5rem 3rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.meaning-header {
+  position: sticky;
+  top: 5rem;
+}
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--mid);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.mark {
+  color: var(--orange);
+  font-size: 0.5rem;
+}
+
+.meaning-word {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  line-height: 1;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.dot { color: var(--orange); }
+
+.meaning-phonetic {
+  font-family: var(--sans);
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--mid);
+  letter-spacing: 0.04em;
+}
+
+.meaning-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.meaning-body p {
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: rgba(0,0,0,0.72);
+}
+
+.meaning-body strong {
+  color: var(--black);
+  font-weight: 600;
+}
+
+.definition {
+  font-family: var(--serif);
+  font-size: 1.25rem !important;
+  line-height: 1.6 !important;
+  color: var(--black) !important;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.pos {
+  font-style: italic;
+  color: var(--mid);
+  font-size: 0.9rem;
+}
+
+.hi {
+  font-style: italic;
+  color: var(--black);
+  font-weight: 600;
+}
+
+body.dark .meaning { background: #0D0D0D; border-top-color: rgba(255,255,255,0.08); }
+body.dark .meaning-body p { color: rgba(221,217,208,0.7); }
+body.dark .definition { color: #DDD9D0 !important; border-bottom-color: rgba(255,255,255,0.08); }
+body.dark .hi { color: #DDD9D0; }
 
 /* ---- DARK MODE TOGGLE BUTTON ---- */
 .theme-toggle {
@@ -532,8 +625,9 @@ body.dark footer { background: #080808; }
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 800px) {
-  nav, .hero, .page-section, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .hero-rule-row, .section-header, .pilot-body { grid-template-columns: 1fr; gap: 1.5rem; }
+  nav, .hero, .page-section, .meaning-inner, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .hero-rule-row, .section-header, .pilot-body, .meaning-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .meaning-header { position: static; }
   .objectives { grid-template-columns: 1fr; }
   .objective-item { border-right: none; border-bottom: 1px solid var(--rule); }
   .objective-item:last-child { border-bottom: none; }
@@ -551,6 +645,7 @@ body.dark footer { background: #080808; }
   <a href="#"><img src="Black.png" alt="Parallax" class="nav-logo-img" style="height:32px; display:block;"></a>
   <div class="nav-right">
     <a class="nav-link" href="#about">About</a>
+    <a class="nav-link" href="#name">The Name</a>
     <a class="nav-link" href="#pilot">Pilot Project</a>
     <a class="nav-link" href="#partners">Partners</a>
     <a class="nav-link" href="#contact">Contact</a>
@@ -564,34 +659,60 @@ body.dark footer { background: #080808; }
 <!-- HERO -->
 <div class="hero" id="about">
   <div class="hero-kicker">non-profit research agency</div>
+  <div class="hero-rule-label" style="margin-bottom:1.25rem;">About Parallax</div>
   <h1 class="hero-headline">We investigate state and <em>corporate violence.</em></h1>
   <div class="hero-rule-row">
-    <div class="hero-rule-label">About Parallax</div>
     <p class="hero-lead">
-      Parallax uses interdisciplinary techniques to investigate violence against marginalised communities. We connect grassroots organisations, legal experts, academics, open-source investigators, architects, artists, and non-profit partners to transform complex investigations into strategic tools for justice.
+      Parallax uses spatial and open-source methods to transform complex investigations into strategic tools for human rights prosecution — bridging grassroots organisations and legal experts to disrupt systemic power imbalances in international law.
     </p>
   </div>
 </div>
 
+<!-- ══════════════ THE NAME ══════════════ -->
+<section class="meaning" id="name">
+  <div class="meaning-inner">
+    <div class="meaning-header">
+      <span class="eyebrow"><span class="mark">◆</span> The name</span>
+      <h2 class="meaning-word">Parallax<span class="dot">.</span></h2>
+      <p class="meaning-phonetic">ˈparəlaks · noun</p>
+    </div>
+
+    <div class="meaning-body">
+      <p class="definition">
+        The apparent displacement of an object viewed from two different vantage points. <span class="pos">— astron., opt.</span>
+      </p>
+      <p>
+        In astronomy, parallax is how we measure distance to the stars &mdash; by noting how their position appears to shift as Earth moves in its orbit. The star does not move. The perspective does.
+      </p>
+      <p>
+        We take the word as a <strong>method</strong>. For every official account of what happened, there is another line of sight &mdash; from the ground, from the margins, from the communities who bear the cost. What looks definitive from one angle rarely looks definitive from two.
+      </p>
+      <p>
+        Counter-investigation is the discipline of <span class="hi">insisting on the second view</span>.
+      </p>
+    </div>
+  </div>
+</section>
+
 <!-- PILOT PROJECT -->
 <div class="page-section" id="pilot">
-  <div class="section-header reveal">
+  <div class="section-header">
     <div class="section-num">Pilot project</div>
     <h2 class="section-title">Violence against refugees and people seeking asylum in the UK via the English Channel</h2>
   </div>
 
-  <div class="case-title-block reveal">
+  <div class="case-title-block">
     <div class="case-label">Case file</div>
     <h3 class="case-title">Crimes Against Humanity at the UK–France-Belgium Border</h3>
   </div>
 
-  <div class="pilot-context reveal">UK · France · Belgium · 2018-Ongoing</div>
+  <div class="pilot-context">UK · France · Belgium · 2018-Ongoing</div>
 
-  <p class="pilot-pull reveal">
+  <p class="pilot-pull">
     Physical violence is enacted by law enforcement - beatings, rubber bullets, evictions. But this violence stems from hostile government policies that criminalise migration and rhetoric that frames people seeking safety as a 'threat'. We seek to overhaul this inequity by applying the law to state actors who systematically violate their legal humanitarian obligations.
   </p>
 
-  <div class="pilot-body reveal">
+  <div class="pilot-body">
     <div>
       <p class="body-text">Our pilot project investigates violence against refugees and people seeking asylum, who attempt to seek safe haven in the UK via the <strong>English Channel/La Manche</strong>.</p>
       <p class="body-text">Parallax seeks to overhaul this inequity by applying the law to those state actors who systematically violate their legal humanitarian obligations. To do so, we gather evidence of <strong>crimes against humanity</strong> committed by actors operating on behalf of the United Kingdom.</p>
@@ -602,7 +723,7 @@ body.dark footer { background: #080808; }
     </div>
   </div>
 
-  <div class="objectives reveal">
+  <div class="objectives">
     <div class="objective-item">
       <div class="objective-num">01</div>
       <div class="objective-title">Evidence</div>
@@ -624,11 +745,11 @@ body.dark footer { background: #080808; }
 <!-- PARTNERS -->
 <div class="partners-section" id="partners">
   <div class="partners-inner">
-    <div class="partners-header reveal">
+    <div class="partners-header">
       <div class="section-num" style="color:rgba(255,255,255,0.35);">Partners</div>
       <p class="partners-intro">Organisations we work alongside to share knowledge, build evidence, and pursue accountability.</p>
     </div>
-    <div class="partners-grid reveal">
+    <div class="partners-grid">
       <div class="partner-card">
         <img src="HRO_logo.png" alt="Human Rights Observers" class="partner-logo">
         <div class="partner-info">
@@ -644,26 +765,22 @@ body.dark footer { background: #080808; }
 <!-- FOOTER / CONTACT -->
 <footer id="contact">
   <div class="footer-inner">
-    <img src="White.png" alt="Parallax" style="height:28px; display:block; opacity:0.85;">
-    <p style="font-family:var(--sans);font-size:0.65rem;font-weight:500;letter-spacing:0.04em;color:rgba(255,255,255,0.6);line-height:1.7;max-width:500px;text-align:left;">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales, incorporated in December 2025 (reg no. 16887325). Registered address: 86-90 Paul Street, London, United Kingdom, EC2A 4NE.</p>
-    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:1rem;">
-      <div style="display:flex;align-items:center;gap:1.5rem;">
-        <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">info@parallax.ngo</a>
-        <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Instagram</a>
-        <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">LinkedIn</a>
+    <img src="White.png" alt="Parallax"
+         onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'">
+    <span class="footer-wordmark-fallback">PARALLAX</span>
+    <p class="footer-legal">Parallax Investigations Ltd is a company limited by guarantee without share capital in England and Wales, incorporated in December 2025 (reg no. 16887325). Registered address: 86–90 Paul Street, London, United Kingdom, EC2A 4NE.</p>
+    <div class="footer-right">
+      <div class="footer-links">
+        <a href="mailto:info@parallax.ngo">info@parallax.ngo</a>
+        <a href="https://www.instagram.com/parallax_ngo" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <p style="font-family:var(--sans);font-size:0.6rem;font-weight:400;letter-spacing:0.04em;color:rgba(255,255,255,0.25);line-height:1;">Brand design by <a href="https://likeamoth.co.uk" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Tim Greenhalgh</a></p>
+      <p class="footer-credit">Brand design by <a href="https://likeamoth.co.uk" target="_blank" rel="noopener">Tim Greenhalgh</a></p>
     </div>
   </div>
 </footer>
 
 <script>
-const revealEls = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
-}, { threshold: 0.1 });
-revealEls.forEach(el => io.observe(el));
-
 const toggle = document.getElementById('themeToggle');
 const label = toggle.querySelector('.toggle-label');
 const icon = toggle.querySelector('.toggle-icon');

@@ -134,161 +134,6 @@ nav {
   color: rgba(0,0,0,0.8);
 }
 
-/* ---- SECTIONS ---- */
-.page-section {
-  border-top: 1px solid var(--rule);
-  padding: 5rem 3rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-header {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 3rem;
-  margin-bottom: 3.5rem;
-}
-
-.section-num {
-  font-family: var(--sans);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Parallax Investigations</title>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Marcellus&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --orange: #F74F20;
-  --orange-pale: #FFF0EB;
-  --black: #0A0A0A;
-  --mid: #6B6B6B;
-  --faint: rgba(0,0,0,0.07);
-  --rule: rgba(0,0,0,0.1);
-  --sans: 'Urbanist', sans-serif;
-  --serif: 'Marcellus', serif;
-}
-
-::selection {
-  background: #F74F20;
-  color: #fff;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--serif);
-  background: #FAFAF8;
-  color: var(--black);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: inherit; text-decoration: none; }
-
-/* ---- NAV ---- */
-nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(250,250,248,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--rule);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 3rem;
-  height: 60px;
-}
-
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-}
-
-.nav-link {
-  font-family: var(--sans);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--mid);
-  transition: color 0.2s;
-}
-
-.nav-link:hover { color: var(--black); }
-
-/* ---- HERO ---- */
-.hero {
-  padding: 6rem 3rem 5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.hero-kicker {
-  font-family: var(--sans);
-  font-size: 0.68rem;
-  font-weight: 600;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--orange);
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 2.5rem;
-}
-
-.hero-kicker::before {
-  content: '';
-  display: inline-block;
-  width: 28px;
-  height: 1px;
-  background: var(--orange);
-}
-
-.hero-headline {
-  font-family: var(--serif);
-  font-size: clamp(2.6rem, 5.8vw, 4.8rem);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  color: var(--black);
-  max-width: 1000px;
-  margin-bottom: 3rem;
-}
-
-.hero-headline em {
-  font-style: italic;
-  color: var(--orange);
-}
-
-.hero-rule-row {
-  padding-top: 3rem;
-  border-top: 1px solid var(--rule);
-  max-width: 720px;
-}
-
-.hero-rule-label {
-  font-family: var(--sans);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--mid);
-  padding-top: 0.2rem;
-}
-
-.hero-lead {
-  font-size: 1.2rem;
-  line-height: 1.7;
-  color: rgba(0,0,0,0.8);
-}
-
 .hero-lead-sub {
   font-family: var(--sans);
   font-size: 0.78rem;
@@ -887,83 +732,18 @@ body.dark .partners-header { border-bottom-color: rgba(255,255,255,0.07); }
 body.dark footer { background: #080808; }
 
 /* ---- RESPONSIVE ---- */
-
-/* Tablet */
-@media (max-width: 900px) {
-  nav { padding: 0 1.5rem; }
-  .nav-right { gap: 1.25rem; }
-  .nav-link { font-size: 0.65rem; }
-  .hero, .page-section, .meaning-inner, .partners-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+@media (max-width: 800px) {
+  nav, .hero, .page-section, .meaning-inner, footer { padding-left: 1.5rem; padding-right: 1.5rem; }
   .hero-rule-row, .section-header, .pilot-body, .meaning-inner { grid-template-columns: 1fr; gap: 1.5rem; }
   .meaning-header { position: static; }
-  .partners-header { grid-template-columns: 1fr; gap: 1rem; }
+  .objectives { grid-template-columns: 1fr; }
+  .objective-item { border-right: none; border-bottom: 1px solid var(--rule); }
+  .objective-item:last-child { border-bottom: none; }
+  .nav-right { display: none; }
+  footer { flex-wrap: wrap; gap: 1.25rem; }
+  .partners-header { grid-template-columns: 1fr; gap: 1rem; margin-bottom: 2rem; padding-bottom: 2rem; }
   .partner-card { grid-template-columns: 1fr; gap: 1.5rem; }
-  .partner-logo { max-width: 200px; }
-}
-
-/* Mobile */
-@media (max-width: 640px) {
-  nav { padding: 0 1.25rem; height: 56px; }
-  .nav-right { gap: 0.85rem; }
-  .nav-link { display: none; }
-  .nav-right .theme-toggle { display: flex; }
-
-  .hero { padding: 3.5rem 1.25rem 3rem; }
-  .hero-kicker { font-size: 0.6rem; letter-spacing: 0.22em; margin-bottom: 1.75rem; gap: 0.5rem; }
-  .hero-kicker::before { width: 18px; }
-  .hero-headline { font-size: clamp(2.2rem, 9vw, 3rem); margin-bottom: 2rem; }
-  .hero-rule-row { padding-top: 2rem; }
-  .hero-lead { font-size: 1.05rem; }
-  .hero-lead-sub { font-size: 0.72rem; margin-top: 1.25rem; padding-top: 1.25rem; }
-
-  .page-section, .partners-inner, .meaning-inner { padding-left: 1.25rem; padding-right: 1.25rem; padding-top: 3.5rem; padding-bottom: 3.5rem; }
-  .meaning-inner { gap: 2rem; }
-  .meaning-word { font-size: clamp(2rem, 9vw, 2.6rem); }
-
-  .case-title-block { padding: 1.5rem; flex-direction: column; gap: 0.75rem; align-items: flex-start; margin-bottom: 2rem; }
-  .case-title { font-size: 1.25rem; }
-  .case-map-group .case-title-block { margin-bottom: 2rem; }
-  .case-map-group { margin-bottom: 2rem; }
-
-  .map-strip { height: 220px; margin: 0 0 2rem; }
-  .map-caption { font-size: 0.55rem; bottom: 0.75rem; right: 0.85rem; }
-
-  .pilot-context { font-size: 0.6rem; letter-spacing: 0.18em; }
-  .pilot-context::before { width: 14px; }
-
-  .channel-lede { font-size: 1.25rem; line-height: 1.45; margin-bottom: 2rem; padding-bottom: 2rem; }
-  .channel-prose p { font-size: 1rem; }
-  .channel-body { margin-bottom: 2.5rem; }
-
-  .objectives { grid-template-columns: 1fr; gap: 1.5rem; padding-top: 2rem; }
-  .objective-item { padding-top: 1rem; }
-  .objective-title { font-size: 1.1rem; }
-
-  .partners-header { margin-bottom: 1.5rem; padding-bottom: 1.5rem; }
-  .partners-intro { font-size: 1rem; }
-  .partner-logo { max-width: 160px; }
-  .partner-name { font-size: 1.2rem; }
-  .partner-card { padding: 2rem 0; }
-
-  /* Footer - the tricky one */
-  footer .footer-inner {
-    padding: 2.5rem 1.25rem !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    gap: 2rem !important;
-  }
-  footer .footer-inner > * { flex: 0 0 auto !important; width: 100%; }
-  footer .footer-inner > p { padding: 0 !important; text-align: left !important; max-width: none !important; }
-  footer .footer-inner > div { align-items: flex-start !important; gap: 1.25rem !important; }
-  footer .footer-inner > div > div { gap: 1.25rem !important; flex-wrap: wrap !important; }
-}
-
-/* Very small phones */
-@media (max-width: 380px) {
-  .hero-headline { font-size: 2rem; }
-  .meaning-word { font-size: 1.85rem; }
-  .case-title { font-size: 1.1rem; }
-  footer .footer-inner > div > div { gap: 0.85rem !important; }
+  .partner-logo { max-width: 180px; }
 }
 </style>
 </head>
@@ -1043,7 +823,7 @@ body.dark footer { background: #080808; }
     <div class="channel-prose">
       <p>The rhetoric frames people seeking safety as a <strong>&ldquo;threat&rdquo;</strong>; the law, selectively applied, provides cover. This is a clear example of how the UK ignores or invokes international humanitarian obligations when it suits its interests.</p>
       <p>We collect and analyse data to identify <strong>patterns of harm</strong>: forced evictions, interceptions of boat launches, the deployment of tear gas, rubber bullets and other less-than-lethal weapons, deliberate interventions in the environment and architecture of Northern France and the deaths that follow. We believe these patterns are <strong>structural, widespread and systematic</strong>: the product of policies that have created and continue to create injury, discrimination, displacement and death for people seeking asylum.</p>
-      <p>Our investigation is back and forwards looking: tracing this violence historically, in some cases as far back as the 1990s, while documenting ongoing harm and anticipating the consequences of policies still being written.</p>
+      <p>Our investigation is both backward and forward-looking: tracing this violence historically, in some cases as far back as the 1990s, while documenting ongoing harm and anticipating the consequences of policies still being written.</p>
     </div>
   </div>
 

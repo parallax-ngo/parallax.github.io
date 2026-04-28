@@ -22,64 +22,6 @@
 ::selection {
   background: #F74F20;
   color: #fff;
-}<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Parallax Investigations</title>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Marcellus&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --orange: #F74F20;
-  --orange-pale: #FFF0EB;
-  --black: #0A0A0A;
-  --mid: #6B6B6B;
-  --faint: rgba(0,0,0,0.07);
-  --rule: rgba(0,0,0,0.1);
-  --sans: 'Urbanist', sans-serif;
-  --serif: 'Marcellus', serif;
-}
-
-::selection {
-  background: #F74F20;
-  color: #fff;
-}
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: var(--serif);
-  background: #FAFAF8;
-  color: var(--black);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Parallax Investigations</title>
-<link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&family=Marcellus&display=swap" rel="stylesheet">
-<style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-:root {
-  --orange: #F74F20;
-  --orange-pale: #FFF0EB;
-  --black: #0A0A0A;
-  --mid: #6B6B6B;
-  --faint: rgba(0,0,0,0.07);
-  --rule: rgba(0,0,0,0.1);
-  --sans: 'Urbanist', sans-serif;
-  --serif: 'Marcellus', serif;
-}
-
-::selection {
-  background: #F74F20;
-  color: #fff;
 }
 
 html { scroll-behavior: smooth; }
@@ -807,6 +749,7 @@ body.dark footer { background: #080808; }
   }
   footer .footer-inner > div:last-child {
     order: 2;
+    align-items: flex-start !important;
   }
 }
 

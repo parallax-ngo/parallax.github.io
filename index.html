@@ -51,6 +51,17 @@ nav {
   height: 60px;
 }
 
+nav::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--orange);
+  z-index: 1;
+}
+
 .nav-right {
   display: flex;
   align-items: center;
@@ -65,9 +76,24 @@ nav {
   text-transform: uppercase;
   color: var(--mid);
   transition: color 0.2s;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 1px;
+  background: var(--orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
 }
 
 .nav-link:hover { color: var(--black); }
+.nav-link:hover::after { transform: scaleX(1); }
 
 /* ---- HERO ---- */
 .hero {
@@ -959,6 +985,7 @@ body.dark footer { background: #080808; }
         <a href="mailto:info@parallax.ngo" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">info@parallax.ngo</a>
         <a href="https://www.instagram.com/parallax_ngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Instagram</a>
         <a href="https://www.linkedin.com/company/parallax-investigations" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">LinkedIn</a>
+        <a href="https://substack.com/@parallaxngo" target="_blank" style="font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.08em;color:rgba(255,255,255,0.75);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,0.75)'">Substack</a>
       </div>
       <p style="font-family:var(--sans);font-size:0.6rem;font-weight:400;letter-spacing:0.04em;color:rgba(255,255,255,0.25);line-height:1;">Visual identity developed with <a href="https://likeamoth.co.uk" target="_blank" style="color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s;" onmouseover="this.style.color='rgba(255,255,255,0.8)'" onmouseout="this.style.color='rgba(255,255,255,0.4)'">Tim Greenhalgh</a></p>
     </div>
